@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :courses do
     resources :chapters
   end
+  #Progresses
+  get    "chapters/read" => "progresses#show"
+  post   "chapters/mark_as_complete" => "progresses#create"
+  delete "chapters/mark_as_incomplete" => "progresses#delete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
