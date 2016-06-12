@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   match 'users/:id' => 'users#update_user', via: [:patch]
   get '/send_password' => "users#reset_password"
   resources :schools
-  resources :courses
+  resources :courses do
+    resources :chapters
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
